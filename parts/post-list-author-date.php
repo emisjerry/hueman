@@ -5,6 +5,13 @@
 ?>
 <p class="post-date">
   <time class="published updated" datetime="<?php the_time('Y-m-d H:i:s'); ?>"><?php the_time( get_option('date_format') ); ?></time>
+<?php // JERRY
+if (function_exists('todays_overall_count'))
+{
+  echo '| ';
+  echo todays_overall_main($post->ID);
+}
+?>
 </p>
 <?php if ( hu_is_checked( 'post-list-meta-author' ) ) : ?>
   <p class="post-date">

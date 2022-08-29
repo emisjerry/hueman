@@ -28,6 +28,11 @@
             </div>
         <?php endif; ?>
       <?php endif; ?>
+<?php
+  if ( hu_is_checked( 'post-tags' ) ) {
+    the_tags('<p class="post-tags"><span>'.__('Tags:','hueman').'</span> ','','</p>');
+  }
+?>
 
       <div class="clear"></div>
 
@@ -55,12 +60,6 @@
 <?php endwhile; ?>
 
 <div class="clear"></div>
-
-<?php
-  if ( hu_is_checked( 'post-tags' ) ) {
-    the_tags('<p class="post-tags"><span>'.__('Tags:','hueman').'</span> ','','</p>');
-  }
-?>
 
 <?php if ( ( hu_is_checked( 'author-bio' ) ) && get_the_author_meta( 'description' ) ): ?>
   <div class="author-bio">

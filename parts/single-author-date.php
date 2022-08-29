@@ -35,6 +35,14 @@ if ( $display_author || $display_date ) {
           <span class="published"><?php echo $published_date; ?></span>
       <?php endif ?>
   <?php endif; ?>
+<?php // JERRY
+if (function_exists('todays_overall_count'))
+{
+  todays_overall_count($post->ID, '| 瀏覽數:', '', '(本日)', '0', 'noshow'); // insert into emis_dailytoptenall
+  echo '| ';
+  echo todays_overall_main($post->ID);
+}
+?>
   </p>
 <?php
 }
